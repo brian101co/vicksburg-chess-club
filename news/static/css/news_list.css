@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+h2, h1 {
+    color: var(--primary-color) !important;
+}
+
+.btn.btn-primary {
+    border-color: var(--accent-color);
+}
+
+.btn.btn-primary:hover {
+    color: var(--primary-color);
+}
+
+.banner {
+    height: 400px;
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1548909876-f728bd13a1cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1490&q=80');
+    background-position: center;
+}
+
+.banner h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--primary-color);
+}
+
+.banner h1::after {
+    content: '';
+    display: block;
+    width: 80%;
+    height: 3px;
+    margin: auto;
+    background-color: var(--accent-color);
+}

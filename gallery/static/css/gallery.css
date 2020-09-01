@@ -1,0 +1,30 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+h1 {
+    color: var(--primary-color) !important;
+    width: fit-content;
+    margin: auto;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 80%;
+    margin: auto;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+.gallery-img {
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+}

@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block extra_css %}
-
+<link rel="stylesheet" href="{% static 'css/news_list.css' %}">
 {% endblock %}
 
 {% block extra_js %}
@@ -15,5 +15,39 @@
 {% endblock %}
 
 {% block content %}
-    
+    <main>
+        <section class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="banner">
+                         <h1 class="my-3 display-4">Local Club News</h1>
+                    </div>
+                   
+                    {% for article in object_list %}
+                        <article class="card my-4">
+                            <header class="px-3 pt-3 pb-0">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h1 class="h2">{{article.title }}</h1>
+                                        <p>
+                                            Written by {{ article.author.first_name }} {{ article.author.last_name }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </header>
+                            <div class="body px-3">
+                             <p>
+                                {{ article.summary }} 
+                             </p>
+                                
+                                <a href="{{ article.get_absolute_url }}" class="btn btn-primary mb-4">Read Full Article</a>
+                            </div>
+                        </article>
+                        {% empty %}
+                        <h2 class="mt-5">Looks like there is no news available.</h2>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </main>
 {% endblock %}

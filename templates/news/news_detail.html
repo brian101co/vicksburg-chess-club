@@ -7,13 +7,31 @@
 {% endblock %}
 
 {% block extra_css %}
-
+<link rel="stylesheet" href="{% static 'css/news_details.css' %}">
 {% endblock %}
 
 {% block extra_js %}
-
+    <script src="{% static 'js/news_details.js' %}"></script>
 {% endblock %}
 
 {% block content %}
-   
+       <main>
+        <article class="container my-5">
+            <div class="row">
+                <div class="col-sm-12">
+                    <header>
+                         <h1 class="display-4 mb-4">{{ news.title }}</h1>
+                            <p>
+                                Written by {{ news.author.first_name }} {{ news.author.last_name }} 
+                                <span class="mx-2">|</span>{{ news.published|date:"F n, Y" }}
+                            </p>
+                         <hr>
+                    </header>
+                    <section class="body">
+                         {{ news.content.html|safe }}
+                    </section>
+                </div>
+            </div>
+        </article>
+    </main>
 {% endblock %}
