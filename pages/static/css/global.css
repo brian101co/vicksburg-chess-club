@@ -1,0 +1,51 @@
+:root {
+    --primary-color: #082545;
+    --secondary-color: #7789B2;
+    --accent-color: #D8A31A;
+}
+
+.btn {
+    background-color: var(--accent-color, #D8A31A);
+}
+
+.btn:hover {
+    background-color: transparent;
+    border-color: var(--accent-color, #D8A31A);
+}
+.accent {
+    color: var(--accent-color, #D8A31A)
+}
+
+/*********************************
+              NAVBAR
+*********************************/
+header nav {
+    background-color: var(--primary-color, #558e74);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000…p='round' stroke-miterlimit='10' d='M47h22M4 15h22M423h22'/%3e%3c/svg%3e");
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+}
+
+.logo-muted {
+    font-size: 1.6rem;
+}
+
+/*********************************
+            END NAVBAR
+*********************************/
+
+/*********************************
+             FOOTER
+*********************************/
+footer .container {
+    background-color: var(--primary-color, #558e74);
+}
+
+/*********************************
+            END FOOTER
+*********************************/

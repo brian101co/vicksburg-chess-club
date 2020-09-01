@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Tournaments | Vicksburg Chess Club
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/tournament_listing.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+
+{% endblock %}
+
+{% block content %}
+    <main>
+        <section class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="banner">
+                         <h1 class="my-3">Upcoming Tournaments</h1>
+                    </div>
+                   
+                    {% for tournament in object_list %}
+                        <article class="card my-4">
+                            <header class="p-3">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-6">
+                                        <h1 class="h3">{{ tournament.title }}</h1>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6">
+                                        <p class="float-right my-auto">
+                                            {{ tournament.start_date|date:"F n, Y" }}
+                                            {% if tournament.ending_date %}
+                                                - {{ tournament.ending_date|date:"F n, Y" }}
+                                            {% endif %}
+                                        </p>
+                                    </div>
+                                </div>
+                            </header>
+                            <div class="body px-3">
+                                <p>
+                                    <strong>Prize:</strong> ${{ tournament.prize }} <strong>Entry Fee:</strong> ${{ tournament.entry_fee }}
+                                </p>
+                                <p>
+                                    {{ tournament.description }}
+                                </p>
+                                <a href="{{ tournament.get_absolute_url }}" class="btn btn-primary mb-4">See Tournament Details</a>
+                            </div>
+                          
+                        </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </main>
+  
+{% endblock %}

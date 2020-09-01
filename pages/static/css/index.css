@@ -1,0 +1,80 @@
+/*********************************
+             BANNER
+*********************************/
+.jumbotron.jumbotron-fluid {
+    position: relative;
+}
+
+.jumbotron.jumbotron-fluid img {
+    object-fit: cover;
+    object-position: right;
+}
+
+.jumbotron.jumbotron-fluid .content-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translate(-5%, -50%);
+}
+
+.sub-title {
+    line-height: 1.75;
+}
+
+.header-title {
+    line-height: 0.95;
+}
+
+.btn {
+    font-size: 0.9rem;
+}
+
+/*********************************
+            END BANNER
+*********************************/
+
+/*********************************
+        NEW TO GAME SECTION
+*********************************/
+
+.new-to-game p,
+p.what-to-expect {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: rgb(61, 61, 61);
+}
+
+/*********************************
+          END NEW TO GAME
+*********************************/
+/*********************************
+            MAP SECTION
+*********************************/
+
+.responsive-img {
+    width: 100%;
+    height: 500px;
+}
+
+/*********************************
+            END MAP
+*********************************/
+
+@media screen and (max-width: 600px) {
+    .display-4 {
+        font-size: 2rem;
+    }
+    .jumbotron.jumbotron-fluid .content-wrapper {
+        width: 80%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .jumbotron.jumbotron-fluid .content-wrapper p {
+        display: none;
+    }
+    .btn {
+        font-size: 0.8rem;
+    }
+}
