@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block extra_css %}
-
+    <link rel="stylesheet" href="{% static 'css/tournament_details.css' %}">
 {% endblock %}
 
 {% block extra_js %}
@@ -15,5 +15,54 @@
 {% endblock %}
 
 {% block content %}
-    {{ tournament }}
+    <main>
+        <article class="container my-5">
+            <div class="row">
+                <div class="col-sm-12">
+                    <header>
+                         <h1 class="display-4 mb-4">{{ tournament.title }}</h1>
+                         <p class="text-muted">
+                               {{ tournament.start_date|date:"F n, Y" }}        
+                               {% if tournament.ending_date %}
+                                    - {{ tournament.ending_date|date:"F n, Y" }}
+                                {% endif %}
+                         </p>
+                         <hr>
+                    </header>
+                    <div class="body">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <h2>Tournament Info</h2>
+                                <ul class="list-group">
+                                    <li class="list-group-item">Tournament Type: {{ tournament.tournament_format }}</li>
+                                    <li class="list-group-item">Prize: ${{ tournament.prize }}</li>
+                                    <li class="list-group-item">Entry Fee: ${{ tournament.entry_fee }}</li>
+                                    <li class="list-group-item">Rounds: {{ tournament.description }}</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <h2>Directions</h2>
+                                <p>
+                                    {{ tournament.directions }}
+                                </p>
+                                <h2>Contact Information</h2>
+                                <p>
+                                    {% if tournament.email %}
+                                    <div class="mb-3">
+                                        <a href="{{ tournament.website }}">Visit Official Website</a> <br>
+                                    </div>
+                                    {% endif %}
+                                    {% if tournament.email %}
+                                    Tournament Director Email: <br> <a href="mailto:{{ tournament.email }}">{{ tournament.email }}</a>
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </article>
+    </main>
+   
 {% endblock %}

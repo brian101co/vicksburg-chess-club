@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block extra_css %}
-
+<link rel="stylesheet" href="{% static 'css/about_us.css' %}">
 {% endblock %}
 
 {% block extra_js %}
@@ -18,8 +18,15 @@
 <main>
     <section class="container">
         <div class="row">
-            <div class="col-sm-12">
-                <h1>About</h1>
+            <div class="col-sm-12 background-container px-0">
+                <div class="background-image">
+                    <div class="content">
+                        <h1 class="display-4">How It All Started</h1>
+                        <p>
+                            The Vicksburg Chess Club was created to promote chess in the Mississippi Delta and connect chess enthrusiast with one another.
+                        </p>
+                    </div>
+                </div> 
             </div>
         </div>
     </section>

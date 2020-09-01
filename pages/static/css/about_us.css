@@ -1,0 +1,24 @@
+.background-image {
+    position: relative;
+    background-image: url('../imgs/chess_piece.png');
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 700px;
+}
+
+/* .background-container {
+    background-color: rgb(230, 230, 230);
+} */
+
+.background-image .content {
+    position: absolute;
+    width: 55%;
+    top: 20%;
+    left: 15%;
+    transform: translate(-15%, -20%);
+}
+
+.background-image h1 {
+     color: var(--primary-color);
+}
