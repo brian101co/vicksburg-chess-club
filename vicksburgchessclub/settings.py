@@ -30,7 +30,6 @@ INSTALLED_APPS = [
 
     'news',
     'gallery',
-    'games',
     'halloffame',
     'pages',
     'tournaments',
