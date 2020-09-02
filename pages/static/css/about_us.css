@@ -7,10 +7,6 @@
     height: 700px;
 }
 
-/* .background-container {
-    background-color: rgb(230, 230, 230);
-} */
-
 .background-image .content {
     position: absolute;
     width: 55%;
@@ -21,4 +17,20 @@
 
 .background-image h1 {
      color: var(--primary-color);
+}
+
+@media screen and (max-width: 500px) {
+    h1.display-4 {
+        font-size: 2.5rem;
+    }
+    .background-image .content {
+        width: 100%;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+    }
+    .background-image .content p {
+        text-align: center;
+    }
 }
